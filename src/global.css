@@ -1,0 +1,102 @@
+@font-face {
+    font-family: poppins;
+    src: url(./assets/fonts/Poppins-Medium.ttf);
+}
+
+:root {
+    --primary-color: #000000;
+    --blue: #377dff;
+    --green: #38cb89;
+    --orange: #ffab00;
+    --red: #ff5630;
+    --neutral-1: #fefefe;
+    --neutral-2: #f3f5f7;
+    --neutral-3: #e8ecef;
+    --neutral-4: #6c7275;
+    --neutral-5: #343839;
+    --neutral-6: #232627;
+    --neutral-7: #141718;
+
+    font-family: poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+body {
+    font-family: poppins;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 4.5rem;
+}
+h3 {
+    font-size: 3.5rem;
+}
+h4 {
+    font-size: 2.5rem;
+}
+h5 {
+    font-size: 2.2rem;
+}
+h6 {
+    font-size: 2rem;
+}
+
+a {
+    all: unset;
+    display: flex;
+    align-items: center;
+    color: var(--neutral-7);
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

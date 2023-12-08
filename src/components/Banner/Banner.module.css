@@ -1,0 +1,53 @@
+.div {
+    background-color: var(--neutral-2);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--neutral-5);
+}
+
+.link {
+    all: unset;
+    display: flex;
+    align-items: center;
+    color: var(--blue);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--blue);
+    box-sizing: border-box;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.arrow {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.percent {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.close {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+@media (max-width: 480px) {
+    .div {
+        font-size: 0.8rem;
+    }
+    .link {
+        display: none;
+    }
+    .arrow,
+    .percent,
+    .close {
+        width: 1re;
+        height: 1rem;
+    }
+}

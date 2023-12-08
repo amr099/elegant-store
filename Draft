@@ -1,0 +1,18 @@
+Routes:-
+- Homepage (responsive slider / mobile nav / change slider controls )
+
+- SignIn / SignUp (imgs - form (h - p - input - checkbox - button))
+
+- flyoutcart (item)
+
+- Product Page (silderOrgallary - content - (reviewsOrsuggesitions))
+
+- Shop (img - productcard - filter(cat/price) - sort - gridoptions)
+
+- Cart (steps to checkout - summary -coupon )
+
+- checkout (form - ordersummary)
+
+- Profile (form - orders - whishlist )
+
+- Contact us

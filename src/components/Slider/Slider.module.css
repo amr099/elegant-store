@@ -1,0 +1,45 @@
+.img {
+    width: 100%;
+    height: auto;
+}
+
+.div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.h1 {
+    font-size: 4.5rem;
+    color: var(--neutral-7);
+    width: 65%;
+    margin: 0 auto;
+}
+
+.span {
+    color: var(--neutral-4);
+}
+
+.p {
+    font-size: 1rem;
+    color: var(--neutral-4);
+    flex: 1;
+}
+
+.spanE {
+    color: var(--neutral-7);
+}
+
+@media (max-width: 992px) {
+    .h1 {
+        width: 100%;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .p {
+        text-align: center;
+    }
+}
