@@ -4,20 +4,29 @@ footer {
     color: #fff !important;
 
     h6 {
-        font-size: 1.5rem;
+        font-size: 24px;
         padding-right: 2rem;
         border-right: 1px solid var(--neutral-5);
+    }
+    a {
+        font-size: 14px;
+        font-family: poppins;
+    }
+
+    p {
+        font-size: 12px;
+        font-family: poppins;
+    }
+
+    span {
+        font-size: 12px;
+        font-family: poppins-semibold;
     }
 
     p,
     span,
     a {
         color: var(--neutral-3);
-        font-size: 0.8rem;
-    }
-
-    a {
-        margin-top: 0;
     }
 
     .row {
@@ -57,6 +66,7 @@ footer {
             order: 1;
         }
         .copy {
+            text-align: center;
             order: 2;
             p {
                 order: 2;

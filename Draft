@@ -1,18 +1,21 @@
-Routes:-
-- Homepage (responsive slider / mobile nav / change slider controls )
+TODO: 
+    - change slider controls
 
-- SignIn / SignUp (imgs - form (h - p - input - checkbox - button))
+
+Routes:-
+
+- Shop (filter, sort and grid options)
+
+- Cart (steps to checkout - summary -coupon)
 
 - flyoutcart (item)
-
-- Product Page (silderOrgallary - content - (reviewsOrsuggesitions))
-
-- Shop (img - productcard - filter(cat/price) - sort - gridoptions)
-
-- Cart (steps to checkout - summary -coupon )
 
 - checkout (form - ordersummary)
 
 - Profile (form - orders - whishlist )
 
 - Contact us
+
+
+
+

@@ -1,26 +1,19 @@
-import Banner from "./../../components/Banner/Banner";
-import Navbar from "./../../components/Navbar/Navbar";
 import Slider from "./../../components/Slider/Slider";
 import styles from "./Home.module.css";
 import arrowRight from "../../assets/icons/arrow-right.svg";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import { register } from "swiper/element/bundle";
+
 import lock from "../../assets/icons/lock.svg";
 import delivery from "../../assets/icons/delivery.svg";
 import money from "../../assets/icons/money.svg";
 import phone from "../../assets/icons/phone.svg";
 import sale from "../../assets/imgs/sale.png";
 import article from "../../assets/imgs/article.png";
-import Footer from "../../components/Footer/Footer";
-
-register();
+import ProductsSlider from "./../../components/ProductsSlider/ProductsSlider";
 
 export default function Home() {
     return (
         <main>
-            <Banner />
             <div className='container'>
-                <Navbar />
                 <Slider />
 
                 {/* Categories */}
@@ -60,29 +53,8 @@ export default function Home() {
                         More products <img src={arrowRight} alt='arrow' />
                     </a>
                 </div>
-                <swiper-container
-                    slides-per-view='4'
-                    speed='500'
-                    loop='true'
-                    css-mode='true'
-                    scrollbar='true'
-                >
-                    <swiper-slide>
-                        <ProductCard />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <ProductCard />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <ProductCard />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <ProductCard />
-                    </swiper-slide>
-                    <swiper-slide>
-                        <ProductCard />
-                    </swiper-slide>
-                </swiper-container>
+
+                <ProductsSlider />
 
                 {/* Cards */}
                 <div className={styles.cards}>
@@ -177,7 +149,6 @@ export default function Home() {
                     <button>Signup</button>
                 </div>
             </div>
-            <Footer />
         </main>
     );
 }

@@ -41,7 +41,7 @@ export default function Slider() {
                 </swiper-slide>
                 ...
             </swiper-container>
-            <div className={styles.div}>
+            <div className={styles.homeSlider}>
                 <h1 className={styles.h1}>
                     Simply Unique <span className={styles.span}>/</span> Simply
                     Better

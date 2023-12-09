@@ -5,7 +5,7 @@ import styles from "./Banner.module.css";
 
 export default function Banner() {
     return (
-        <div className={styles.div}>
+        <div className={styles.banner}>
             <img src={percent} alt='percent' className={styles.percent} />
             <p>30% off storewide — Limited time! </p>
 

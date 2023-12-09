@@ -1,0 +1,71 @@
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .img {
+        background-image: url(../../assets/imgs/login.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+    }
+    h6 {
+        padding-top: 2rem;
+        text-align: center;
+    }
+    form {
+        width: 80%;
+        padding: 2rem 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    p {
+        color: var(--neutral-4);
+        a {
+            color: var(--blue);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    input:not([type="checkbox"]) {
+        all: unset;
+        border-bottom: 1px solid var(--neutral-4);
+        padding: 0.5rem 0;
+    }
+
+    [type="checkbox"] {
+        padding: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    label {
+        color: var(--neutral-4);
+        span {
+            color: var(--neutral-7);
+        }
+    }
+
+    .flex span {
+        color: var(--neutral-7);
+    }
+}
+
+@media (max-width: 769px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, minmax(50vh, 1fr));
+
+        .img {
+            min-height: 50vh;
+            grid-row: 1/2;
+        }
+        form {
+            grid-row: 2/3;
+        }
+    }
+}
