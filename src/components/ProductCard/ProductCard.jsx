@@ -1,20 +1,35 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 
-export default function ProductCard() {
+export default function ProductCard({ item }) {
+    // const { name, img, price, oldPrice } = item;
+
+    const divBg = {
+        backgroundImage: `url(${item?.img})`,
+    };
+
     return (
         <div className={styles.product}>
-            <div className={styles.img}>
-                <div className={styles.col}>
-                    <div className={styles.new}>new</div>
-                    <div className={styles.offer}>-50%</div>
+            <Link to={`/product/${item?.id}`}>
+                <div className={styles.img} style={divBg}>
+                    <div className={styles.col}>
+                        <div className={styles.new}>new</div>
+                        <div className={styles.offer}>-50%</div>
+                    </div>
+                    <button className={styles.button}>Add to cart</button>
                 </div>
-                <button className={styles.button}>Add to cart</button>
-            </div>
+            </Link>
             <div className={styles.content}>
                 <span className={styles.rating}></span>
-                <p className={styles.title}>Loveseat Sofa</p>
+                <p className={styles.title}>{item?.name}</p>
                 <p className={styles.price}>
-                    $199.00 <span className={styles.oldPrice}>$400.00</span>
+                    ${item?.price}
+                    {item?.oldPrice && (
+                        <span className={styles.oldPrice}>
+                            ${item?.oldPrice}
+                        </span>
+                    )}
                 </p>
             </div>
         </div>

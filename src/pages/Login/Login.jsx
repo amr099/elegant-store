@@ -1,6 +1,6 @@
 import styles from "./Login.module.css";
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
+
+import { Outlet } from "react-router-dom";
 
 export default function Login() {
     return (
@@ -8,8 +8,7 @@ export default function Login() {
             <div className={styles.img}>
                 <h6>3legant.</h6>
             </div>
-            {/* <SignIn /> */}
-            <SignUp />
+            <Outlet />
         </section>
     );
 }

@@ -1,7 +1,35 @@
 import styles from "./Shop.module.css";
 import ProductCard from "./../../components/ProductCard/ProductCard";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function Shop() {
+    const [products, setProducts] = useState([]);
+    const params = useParams();
+
+    useEffect(() => {
+        const getProducts = async () => {
+            if (params.category) {
+                const response = await fetch(
+                    "https://657600c70febac18d4038f91.mockapi.io/api/category"
+                );
+                const data = await response.json();
+
+                setProducts(
+                    data.find((cat) => cat.name === params.category).products
+                );
+            } else {
+                const response = await fetch(
+                    "https://657600c70febac18d4038f91.mockapi.io/api/product"
+                );
+                const data = await response.json();
+
+                setProducts(data);
+            }
+        };
+
+        getProducts();
+    }, []);
     return (
         <>
             <div className={styles.shopCover}>
@@ -10,13 +38,9 @@ export default function Shop() {
             </div>
 
             <div className={styles.shopGrid}>
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {products?.map((item) => (
+                    <ProductCard item={item} key={item.id} />
+                ))}
             </div>
         </>
     );

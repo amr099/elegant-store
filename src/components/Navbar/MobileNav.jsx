@@ -5,6 +5,7 @@ import heart from "../../assets/icons/heart.svg";
 import youtube from "../../assets/icons/youtube-black.svg";
 import instagram from "../../assets/icons/instagram-black.svg";
 import facebook from "../../assets/icons/facebook-black.svg";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 export default function MobileNav({ nav, setNav }) {
@@ -22,10 +23,10 @@ export default function MobileNav({ nav, setNav }) {
                     </div>
                     <input type='search' placeholder='Search' />
                     {/* <nav> */}
-                    <a href='#'>Home</a>
-                    <a href='#'>Shop</a>
-                    <a href='#'>Products</a>
-                    <a href='#'>Contact Us</a>
+                    <Link to='/'>Home</Link>
+                    <Link to='/shop'>Shop</Link>
+                    <Link to='/blog'>Blog</Link>
+                    <Link to='/contact'>Contact Us</Link>
                     {/* </nav> */}
                 </div>
                 <div>
@@ -37,7 +38,9 @@ export default function MobileNav({ nav, setNav }) {
                         <span>Whishlist</span>
                         <img src={heart} alt='bag' />
                     </div>
-                    <button>Sign In</button>
+                    <Link to='/login' className='button'>
+                        Sign In
+                    </Link>
                     <div className='flex'>
                         <img src={instagram} alt='instagram' />
                         <img src={facebook} alt='facebook' />

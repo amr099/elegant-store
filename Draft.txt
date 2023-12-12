@@ -1,0 +1,20 @@
+TODO: 
+    - choose proper API
+    - handle API requests using redux
+    - handle cart (local storage)
+    - Shop (filter, sort and grid options)
+    - change slider controls
+    - media for small-screen fonts
+    - insert map into contact us page
+    - fix horizontal overflow
+    - remove css reduntant line (input, label , fonts)
+
+
+Pages:-
+
+- Profile (form - orders - whishlist)
+
+
+
+
+

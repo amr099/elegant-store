@@ -1,0 +1,71 @@
+.flyoutCart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+    position: absolute;
+    padding: 2rem 1rem;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    width: 40%;
+    min-width: max-content;
+    z-index: 2;
+    background-color: #fff;
+
+    h6 {
+        margin-bottom: 1rem;
+    }
+    button {
+        width: 100%;
+        padding: 1rem 0;
+    }
+    a {
+        display: block;
+        text-align: center;
+    }
+}
+
+.flyoutCartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--neutral-2);
+
+    .col {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    img[alt="close"] {
+        width: 24px;
+        margin-left: auto;
+    }
+
+    input {
+        font-size: 12px;
+        font-family: inter-semibold;
+        width: 100px;
+        padding: 0.2rem;
+    }
+
+    .name {
+        font-size: 14px;
+        font-family: inter-semibold;
+    }
+
+    .color {
+        font: 12px;
+        font-family: inter;
+        color: var(--neutral-4);
+    }
+}
+
+@media (max-width: 769px) {
+    .flyoutCart {
+        width: 100%;
+    }
+}

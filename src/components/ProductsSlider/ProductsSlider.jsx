@@ -1,9 +1,22 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { register } from "swiper/element/bundle";
 import { useEffect } from "react";
 
 export default function ProductsSlider() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getProducts = async () => {
+            const response = await fetch(
+                "https://657600c70febac18d4038f91.mockapi.io/api/product"
+            );
+            const data = await response.json();
+            setProducts(data);
+        };
+
+        getProducts();
+    }, []);
     const swiperRef = useRef(null);
 
     useEffect(() => {
@@ -30,21 +43,11 @@ export default function ProductsSlider() {
             loop='true'
             css-mode='true'
         >
-            <swiper-slide>
-                <ProductCard />
-            </swiper-slide>
-            <swiper-slide>
-                <ProductCard />
-            </swiper-slide>
-            <swiper-slide>
-                <ProductCard />
-            </swiper-slide>
-            <swiper-slide>
-                <ProductCard />
-            </swiper-slide>
-            <swiper-slide>
-                <ProductCard />
-            </swiper-slide>
+            {products?.map((item) => (
+                <swiper-slide key={item.id}>
+                    <ProductCard item={item} />
+                </swiper-slide>
+            ))}
         </swiper-container>
     );
 }

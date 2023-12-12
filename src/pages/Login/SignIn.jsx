@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 export default function SignIn() {
     return (
         <form>
             <h4>Sign In</h4>
             <p className='flex'>
-                Don’t have an accout yet? <a href='#'>Sign Up</a>
+                Don’t have an accout yet?{" "}
+                <Link to='/login/register'>Sign Up</Link>
             </p>
             <input
                 type='email'

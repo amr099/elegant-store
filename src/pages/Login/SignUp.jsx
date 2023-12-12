@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 export default function SignUp() {
     return (
         <form>
             <h4>Sign Up</h4>
             <p className='flex'>
-                Already have an account? <a href='#'>Sign In</a>
+                Already have an account? <Link to='/login'>Sign In</Link>
             </p>
             <input type='name' name='name' placeholder='Your name' />
             <input name='username' placeholder='Username' />

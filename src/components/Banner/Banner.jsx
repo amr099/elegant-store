@@ -1,7 +1,8 @@
 import percent from "../../assets/icons/percent.svg";
-import arrowRight from "../../assets/icons/arrow-right.svg";
+import arrowRightBlue from "../../assets/icons/arrow-right-blue.svg";
 import close from "../../assets/icons/close.svg";
 import styles from "./Banner.module.css";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
     return (
@@ -9,14 +10,14 @@ export default function Banner() {
             <img src={percent} alt='percent' className={styles.percent} />
             <p>30% off storewide — Limited time! </p>
 
-            <a href='#' className={styles.link}>
+            <Link to='/shop' className={styles.link}>
                 shop now{" "}
                 <img
-                    src={arrowRight}
+                    src={arrowRightBlue}
                     alt='arrow-tight'
                     className={styles.arrow}
                 />
-            </a>
+            </Link>
 
             <img src={close} alt='close' className={styles.close} />
         </div>

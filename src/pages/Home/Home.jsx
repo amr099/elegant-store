@@ -1,14 +1,12 @@
 import Slider from "./../../components/Slider/Slider";
 import styles from "./Home.module.css";
-import arrowRight from "../../assets/icons/arrow-right.svg";
-
-import lock from "../../assets/icons/lock.svg";
-import delivery from "../../assets/icons/delivery.svg";
-import money from "../../assets/icons/money.svg";
-import phone from "../../assets/icons/phone.svg";
 import sale from "../../assets/imgs/sale.png";
-import article from "../../assets/imgs/article.png";
+import arrowRight from "../../assets/icons/arrow-right.svg";
 import ProductsSlider from "./../../components/ProductsSlider/ProductsSlider";
+import { Link } from "react-router-dom";
+import CategoryThumbnail from "./../../components/CategoryThumbnail/CategoryThumbnail";
+import Article from "./../../components/Article/Article";
+import Cards from "./Cards";
 
 export default function Home() {
     return (
@@ -18,30 +16,18 @@ export default function Home() {
 
                 {/* Categories */}
                 <div className={styles.categoriesGrid}>
-                    <div className={styles.category1}>
-                        <div className={styles.content}>
-                            <h5 className={styles.h5}>Living Room</h5>
-                            <a href='#' className={styles.catLink}>
-                                Shop Now <img src={arrowRight} alt='arrow' />
-                            </a>
-                        </div>
-                    </div>
-                    <div className={styles.category2}>
-                        <div className={styles.content}>
-                            <h5 className={styles.h5}>Bedroom</h5>
-                            <a href='#' className={styles.catLink}>
-                                Shop Now <img src={arrowRight} alt='arrow' />
-                            </a>
-                        </div>
-                    </div>
-                    <div className={styles.category3}>
-                        <div className={styles.content}>
-                            <h5 className={styles.h5}>Kitchen</h5>
-                            <a href='#' className={styles.catLink}>
-                                Shop Now <img src={arrowRight} alt='arrow' />
-                            </a>
-                        </div>
-                    </div>
+                    <CategoryThumbnail
+                        styles={styles.category1}
+                        title={"living room"}
+                    />
+                    <CategoryThumbnail
+                        styles={styles.category2}
+                        title={"kitchen"}
+                    />
+                    <CategoryThumbnail
+                        styles={styles.category3}
+                        title={"bedroom"}
+                    />
                 </div>
                 {/* End Categories */}
 
@@ -49,74 +35,28 @@ export default function Home() {
 
                 <div className={styles.sectionHeader}>
                     <h4>New Arrivals</h4>
-                    <a href='#'>
+                    <Link to='/shop'>
                         More products <img src={arrowRight} alt='arrow' />
-                    </a>
+                    </Link>
                 </div>
 
                 <ProductsSlider />
 
                 {/* Cards */}
-                <div className={styles.cards}>
-                    <div className={styles.card}>
-                        <img src={delivery} alt='delivery' />
-                        <h6>Free Shipping</h6>
-                        <span>Order above $200</span>
-                    </div>
-                    <div className={styles.card}>
-                        <img src={money} alt='money' />
-                        <h6>Money-back</h6>
-                        <span>30 days guarantee</span>
-                    </div>
-                    <div className={styles.card}>
-                        <img src={lock} alt='lock' />
-                        <h6>Secure Payments</h6>
-                        <span>Secured by Stripe</span>
-                    </div>
-                    <div className={styles.card}>
-                        <img src={phone} alt='phone' />
-                        <h6>24/7 Support</h6>
-                        <span>Phone and Email support</span>
-                    </div>
-                </div>
-
+                <Cards />
                 {/* Articles */}
 
                 <div className={styles.sectionHeader}>
                     <h4>Articles</h4>
-                    <a href='#'>
+                    <Link to='/blog'>
                         More articles <img src={arrowRight} alt='arrow' />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className={styles.articlesGrid}>
-                    <article>
-                        <img src={article} alt='article' />
-                        <div>
-                            <h6>7 ways to decor your home</h6>
-                            <a href='#'>
-                                Read More <img src={arrowRight} alt='arrow' />
-                            </a>
-                        </div>
-                    </article>
-                    <article>
-                        <img src={article} alt='article' />
-                        <div>
-                            <h6>7 ways to decor your home</h6>
-                            <a href='#'>
-                                Read More <img src={arrowRight} alt='arrow' />
-                            </a>
-                        </div>
-                    </article>
-                    <article>
-                        <img src={article} alt='article' />
-                        <div>
-                            <h6>7 ways to decor your home</h6>
-                            <a href='#'>
-                                Read More <img src={arrowRight} alt='arrow' />
-                            </a>
-                        </div>
-                    </article>
+                    <Article />
+                    <Article />
+                    <Article />
                 </div>
 
                 {/* Sale */}
@@ -129,24 +69,11 @@ export default function Home() {
                             It’s more affordable than ever to give every room in
                             your home a stylish makeover
                         </p>
-                        <a href='#'>
+                        <Link to='/shop'>
                             {" "}
                             Shop now <img src={arrowRight} alt='arrow' />
-                        </a>
+                        </Link>
                     </div>
-                </div>
-            </div>
-            {/* Newsletter */}
-            <div className={styles.newsletter}>
-                <h4>Join Our Newsletter</h4>
-                <p>Sign up for deals, new products and promotions</p>
-                <div>
-                    <input
-                        type='email'
-                        name='email'
-                        placeholder='Email Address'
-                    />{" "}
-                    <button>Signup</button>
                 </div>
             </div>
         </main>

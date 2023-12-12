@@ -3,11 +3,15 @@ import user from "../../assets/icons/user.svg";
 import bag from "../../assets/icons/bag.svg";
 import menu from "../../assets/icons/menu.svg";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-export default function Navbar({ setNav }) {
+export default function Navbar({ setNav, setCart }) {
     const openMobileNav = () => {
         setNav(true);
+    };
+    const openCart = () => {
+        setCart(true);
     };
     return (
         <header className={styles.header}>
@@ -18,26 +22,33 @@ export default function Navbar({ setNav }) {
                     className={styles.icon}
                     onClick={openMobileNav}
                 />
-                <h4 className={styles.h}>3legant</h4>
+                <h4 className={styles.h}>
+                    3legant<span>.</span>
+                </h4>
             </div>
             <nav className={styles.nav}>
-                <a href='#' className={styles.link}>
+                <Link to='/' className={styles.link}>
                     Home
-                </a>
-                <a href='#' className={styles.link}>
+                </Link>
+                <Link to='/shop' className={styles.link}>
                     Shop
-                </a>
-                <a href='#' className={styles.link}>
-                    Product
-                </a>
-                <a href='#' className={styles.link}>
+                </Link>
+                <Link to='/blog' className={styles.link}>
+                    blog
+                </Link>
+                <Link to='/contact' className={styles.link}>
                     Contact Us
-                </a>
+                </Link>
             </nav>
             <div className={styles.icons}>
                 <img src={search} alt='search' className={styles.icon} />
                 <img src={user} alt='user' className={styles.icon} />
-                <img src={bag} alt='bag' className={styles.icon} />
+                <img
+                    src={bag}
+                    alt='bag'
+                    className={styles.icon}
+                    onClick={openCart}
+                />
             </div>
         </header>
     );
