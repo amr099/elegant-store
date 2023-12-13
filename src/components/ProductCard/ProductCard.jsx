@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export default function ProductCard({ item }) {
-    // const { name, img, price, oldPrice } = item;
+    const { AddToCart } = useContext(CartContext);
 
     const divBg = {
         backgroundImage: `url(${item?.img})`,
@@ -17,7 +19,12 @@ export default function ProductCard({ item }) {
                         <div className={styles.new}>new</div>
                         <div className={styles.offer}>-50%</div>
                     </div>
-                    <button className={styles.button}>Add to cart</button>
+                    <button
+                        className={styles.button}
+                        onClick={() => AddToCart({ ...item, amount: 1 })}
+                    >
+                        Add to cart
+                    </button>
                 </div>
             </Link>
             <div className={styles.content}>

@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 4rem;
-    position: absolute;
+    position: fixed;
     padding: 2rem 1rem;
     top: 0;
     right: 0;

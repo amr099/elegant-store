@@ -8,13 +8,16 @@ export default function ProductsSlider() {
 
     useEffect(() => {
         const getProducts = async () => {
+            let products = [];
             const response = await fetch(
-                "https://657600c70febac18d4038f91.mockapi.io/api/product"
+                "https://657600c70febac18d4038f91.mockapi.io/api/products"
             );
             const data = await response.json();
-            setProducts(data);
+            for (let i in data) {
+                products.push(...data[i].products);
+            }
+            setProducts(products);
         };
-
         getProducts();
     }, []);
     const swiperRef = useRef(null);

@@ -9,27 +9,26 @@ export default function Shop() {
 
     useEffect(() => {
         const getProducts = async () => {
-            if (params.category) {
-                const response = await fetch(
-                    "https://657600c70febac18d4038f91.mockapi.io/api/category"
-                );
-                const data = await response.json();
+            let products = [];
+            const response = await fetch(
+                "https://657600c70febac18d4038f91.mockapi.io/api/products"
+            );
+            const data = await response.json();
 
+            if (params.category) {
                 setProducts(
-                    data.find((cat) => cat.name === params.category).products
+                    data.find((cat) => cat.name == params.category).products
                 );
             } else {
-                const response = await fetch(
-                    "https://657600c70febac18d4038f91.mockapi.io/api/product"
-                );
-                const data = await response.json();
-
-                setProducts(data);
+                for (let i in data) {
+                    products.push(...data[i].products);
+                }
+                setProducts(products);
             }
         };
 
         getProducts();
-    }, []);
+    }, [params]);
     return (
         <>
             <div className={styles.shopCover}>

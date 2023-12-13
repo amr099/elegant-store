@@ -4,14 +4,17 @@ import bag from "../../assets/icons/bag.svg";
 import menu from "../../assets/icons/menu.svg";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 // eslint-disable-next-line react/prop-types
-export default function Navbar({ setNav, setCart }) {
+export default function Navbar({ setNav, setFlyCart }) {
+    const { count } = useContext(CartContext);
     const openMobileNav = () => {
         setNav(true);
     };
     const openCart = () => {
-        setCart(true);
+        setFlyCart(true);
     };
     return (
         <header className={styles.header}>
@@ -43,12 +46,15 @@ export default function Navbar({ setNav, setCart }) {
             <div className={styles.icons}>
                 <img src={search} alt='search' className={styles.icon} />
                 <img src={user} alt='user' className={styles.icon} />
-                <img
-                    src={bag}
-                    alt='bag'
-                    className={styles.icon}
-                    onClick={openCart}
-                />
+                <div className='flex'>
+                    <img
+                        src={bag}
+                        alt='bag'
+                        className={styles.icon}
+                        onClick={openCart}
+                    />
+                    <span>{count}</span>
+                </div>
             </div>
         </header>
     );

@@ -6,10 +6,13 @@ import youtube from "../../assets/icons/youtube-black.svg";
 import instagram from "../../assets/icons/instagram-black.svg";
 import facebook from "../../assets/icons/facebook-black.svg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 // eslint-disable-next-line react/prop-types
 export default function MobileNav({ nav, setNav }) {
-    console.log(nav);
+    const { count } = useContext(CartContext);
+
     const closeMobileNav = () => {
         setNav(false);
     };
@@ -32,11 +35,14 @@ export default function MobileNav({ nav, setNav }) {
                 <div>
                     <div className='flexBetween'>
                         <span>Cart</span>
-                        <img src={bag} alt='bag' />
+                        <div className='flex'>
+                            <img src={bag} alt='bag' />
+                            <span>{count}</span>
+                        </div>
                     </div>
                     <div className='flexBetween'>
                         <span>Whishlist</span>
-                        <img src={heart} alt='bag' />
+                        <img src={heart} alt='heart' />
                     </div>
                     <Link to='/login' className='button'>
                         Sign In

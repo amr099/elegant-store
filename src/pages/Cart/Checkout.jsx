@@ -1,8 +1,11 @@
 import styles from "./Cart.module.css";
 import FlyoutCartItem from "./../../components/FlyoutCart/FlyoutCartItem";
 import money from "../../assets/icons/money.svg";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export default function Checkout() {
+    const { cart, total } = useContext(CartContext);
     return (
         <div className={styles.checkout}>
             <form>
@@ -65,9 +68,9 @@ export default function Checkout() {
 
             <div className={styles.order}>
                 <h6>Order summary</h6>
-                <FlyoutCartItem />
-                <FlyoutCartItem />
-                <FlyoutCartItem />
+                {cart?.map((item) => (
+                    <FlyoutCartItem item={item} key={item?.id} />
+                ))}
                 <div className='flexBetween'>
                     <input type='text' id='coupon' name='coupon' />
                     <button>Apply</button>
@@ -84,11 +87,11 @@ export default function Checkout() {
                 </div>
                 <div className='flexBetween'>
                     <span>Subtotal</span>
-                    <span className={styles.bold}>$99.00</span>
+                    <span className={styles.bold}>${total}</span>
                 </div>
                 <div className='flexBetween'>
                     <span className={styles.bold}>Total</span>
-                    <span className={styles.bold}>$234.00</span>
+                    <span className={styles.bold}>${total - 25}</span>
                 </div>
             </div>
         </div>

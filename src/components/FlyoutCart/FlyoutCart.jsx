@@ -2,10 +2,14 @@ import styles from "./FlyoutCart.module.css";
 import FlyoutCartItem from "./FlyoutCartItem";
 import close from "../../assets/icons/close.svg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 // eslint-disable-next-line react/prop-types
-export default function FlyoutCart({ cart, setCart }) {
+export default function FlyoutCart({ flycart, setFlyCart }) {
+    const { cart, total } = useContext(CartContext);
+
     return (
-        cart && (
+        flycart && (
             <div className={styles.flyoutCart}>
                 <div>
                     <div className='flexBetween'>
@@ -13,22 +17,21 @@ export default function FlyoutCart({ cart, setCart }) {
                         <img
                             src={close}
                             alt='close'
-                            onClick={() => setCart(false)}
+                            onClick={() => setFlyCart(false)}
                         />
                     </div>
-                    <FlyoutCartItem />
-                    <FlyoutCartItem />
-                    <FlyoutCartItem />
-                    <FlyoutCartItem />
+                    {cart?.map((item) => (
+                        <FlyoutCartItem key={item?.id} item={item} />
+                    ))}
                 </div>
                 <div>
                     <div className='flexBetween'>
                         <span>Subtotal</span>
-                        <span>$99.00</span>
+                        <span>${total}</span>
                     </div>
                     <div className='flexBetween'>
                         <span>Total</span>
-                        <span>$234.00</span>
+                        <span>${total + 30}</span>
                     </div>
                     <Link to='/cart/checkout' className='button'>
                         Checkout

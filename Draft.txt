@@ -1,7 +1,4 @@
 TODO: 
-    - choose proper API
-    - handle API requests using redux
-    - handle cart (local storage)
     - Shop (filter, sort and grid options)
     - change slider controls
     - media for small-screen fonts

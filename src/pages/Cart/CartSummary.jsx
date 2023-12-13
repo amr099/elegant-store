@@ -1,10 +1,12 @@
 import styles from "./Cart.module.css";
-import cartItem from "../../assets/imgs/p-color.png";
 import money from "../../assets/icons/money.svg";
-import close from "../../assets/icons/close.svg";
 import { Link } from "react-router-dom";
+import CartItem from "./CartItem";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export default function CartSummary() {
+    const { cart, total } = useContext(CartContext);
     return (
         <div className={styles.cartContainer}>
             <table>
@@ -17,27 +19,9 @@ export default function CartSummary() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div className='flex'>
-                                <img src={cartItem} alt='cartItem-img' />
-                                <div className={styles.col}>
-                                    <span className={styles.name}>
-                                        Tray Table
-                                    </span>
-                                    <span className={styles.color}>
-                                        Color: Black
-                                    </span>
-                                    <img src={close} alt='close' />
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <input type='number' />
-                        </td>
-                        <td className={styles.price}>$19.00</td>
-                        <td className={styles.sub}>$38.00</td>
-                    </tr>
+                    {cart?.map((item) => (
+                        <CartItem item={item} key={item?.id} />
+                    ))}
                 </tbody>
             </table>
             <div className={styles.summary}>
@@ -68,11 +52,11 @@ export default function CartSummary() {
 
                 <div className='flexBetween'>
                     <span>Subtotal</span>
-                    <span className={styles.bold}>$1234.00</span>
+                    <span className={styles.bold}>${total}</span>
                 </div>
                 <div className='flexBetween'>
                     <span className={styles.bold}>Total</span>
-                    <span className={styles.bold}>$1345.00</span>
+                    <span className={styles.bold}>${total + 36}</span>
                 </div>
                 <Link to='checkout' className='button'>
                     Checkout

@@ -9,14 +9,15 @@ import Newsletter from "./pages/Home/Newsletter";
 
 function App() {
     const [nav, setNav] = useState(false);
-    const [cart, setCart] = useState(false);
+    const [flycart, setFlyCart] = useState(false);
+
     return (
         <>
             <Banner />
-            <FlyoutCart cart={cart} setCart={setCart} />
+            <FlyoutCart flycart={flycart} setFlyCart={setFlyCart} />
             <MobileNav nav={nav} setNav={setNav} />
             <div className='container'>
-                <Navbar setNav={setNav} setCart={setCart} />
+                <Navbar setNav={setNav} setFlyCart={setFlyCart} />
                 <Outlet />
             </div>
             <Newsletter />
