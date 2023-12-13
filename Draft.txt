@@ -1,15 +1,27 @@
-TODO: 
-    - Shop (filter, sort and grid options)
-    - change slider controls
-    - media for small-screen fonts
-    - insert map into contact us page
-    - fix horizontal overflow
-    - remove css reduntant line (input, label , fonts)
+TODO:-
+
+- Shop (filter, sort and grid options)
+- Order {
+        userId:
+        info:{...}
+        orders:{...}
+    }
+    - handle users
+    - handle orders 
 
 
-Pages:-
 
-- Profile (form - orders - whishlist)
+    CSS:
+     - media for small-screen fonts
+     - insert map into contact us page
+     - fix horizontal overflow
+     - handle margin bwtween sections
+     - handle scrolltotop
+     - remove css reduntant line (input, label , fonts , table)
+     - fix tables of profile page on mobile 
+     - add slider img for mobile.
+
+
 
 
 

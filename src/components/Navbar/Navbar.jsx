@@ -45,7 +45,9 @@ export default function Navbar({ setNav, setFlyCart }) {
             </nav>
             <div className={styles.icons}>
                 <img src={search} alt='search' className={styles.icon} />
-                <img src={user} alt='user' className={styles.icon} />
+                <Link to='/login'>
+                    <img src={user} alt='user' className={styles.icon} />
+                </Link>
                 <div className='flex'>
                     <img
                         src={bag}
@@ -53,7 +55,7 @@ export default function Navbar({ setNav, setFlyCart }) {
                         className={styles.icon}
                         onClick={openCart}
                     />
-                    <span>{count}</span>
+                    {count != 0 && <span>{count}</span>}
                 </div>
             </div>
         </header>

@@ -36,13 +36,17 @@ export default function MobileNav({ nav, setNav }) {
                     <div className='flexBetween'>
                         <span>Cart</span>
                         <div className='flex'>
-                            <img src={bag} alt='bag' />
-                            <span>{count}</span>
+                            <Link to='/cart'>
+                                <img src={bag} alt='bag' />
+                            </Link>
+                            {count != 0 && <span>{count}</span>}
                         </div>
                     </div>
                     <div className='flexBetween'>
                         <span>Whishlist</span>
-                        <img src={heart} alt='heart' />
+                        <Link to='/profile/wishlist'>
+                            <img src={heart} alt='heart' />
+                        </Link>
                     </div>
                     <Link to='/login' className='button'>
                         Sign In

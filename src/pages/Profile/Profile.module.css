@@ -1,0 +1,112 @@
+.user {
+    margin: 3rem;
+    h3 {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    > div {
+        display: flex;
+        gap: 4rem;
+    }
+
+    .profile {
+        width: 25%;
+        background-color: #f3f5f7;
+        padding: 3rem 1rem;
+        border-radius: 8px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    h6 {
+        font-size: 20px;
+        font-family: inter-semibold;
+    }
+
+    a {
+        margin-bottom: 2rem;
+        color: var(--neutral-4);
+        font-family: inter-semibold;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1;
+    }
+
+    .address {
+        display: flex;
+        gap: 1.5rem;
+        .card {
+            padding: 1rem;
+            border: 1px solid var(--neutral-4);
+            border-radius: 6px;
+            align-self: start;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        h6 {
+            font-size: 1rem;
+            font-family: inter-semibold;
+        }
+
+        p {
+            font-size: 14px;
+            font-family: inter;
+        }
+
+        span {
+            font-size: 1rem;
+            font-family: inter-bold;
+            color: var(--neutral-4);
+        }
+    }
+
+    table {
+        flex: 1;
+        tr {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--neutral-3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        td {
+            font-size: 14px;
+            font-family: inter;
+            color: var(--neutral-7);
+        }
+        thead td {
+            color: var(--neutral-4);
+        }
+    }
+
+    table.wishlist tr {
+        grid-template-columns: 2fr repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 769px) {
+    .user > div,
+    .address {
+        flex-direction: column;
+        align-items: center;
+        .profile {
+            width: 100%;
+        }
+    }
+}

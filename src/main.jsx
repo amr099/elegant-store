@@ -16,6 +16,11 @@ import CartSummary from "./pages/Cart/CartSummary.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Blog from "./pages/Blog/Blog.jsx";
 import CartContextProvider from "./context/CartContext";
+import Details from "./pages/Profile/Details.jsx";
+import Address from "./pages/Profile/Address.jsx";
+import OrdersHistory from "./pages/Profile/OrdersHistory.jsx";
+import Whishlist from "./pages/Profile/Whishlist.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
 
 const router = createBrowserRouter([
     {
@@ -57,6 +62,28 @@ const router = createBrowserRouter([
                     {
                         path: "complete",
                         element: <Complete />,
+                    },
+                ],
+            },
+            {
+                path: "profile",
+                element: <Profile />,
+                children: [
+                    {
+                        path: "details",
+                        element: <Details />,
+                    },
+                    {
+                        path: "address",
+                        element: <Address />,
+                    },
+                    {
+                        path: "orders",
+                        element: <OrdersHistory />,
+                    },
+                    {
+                        path: "wishlist",
+                        element: <Whishlist />,
                     },
                 ],
             },
