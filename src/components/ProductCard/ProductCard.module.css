@@ -1,8 +1,11 @@
 .product {
     margin: 1rem 0;
-    .img {
+    position: relative;
+    .card {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
         width: 250px;
-        height: 350px;
+        height: 320px;
         background-image: url(../../assets/imgs/product.png);
         background-size: cover;
         background-position: center;
@@ -10,8 +13,13 @@
         &:hover {
             cursor: pointer;
         }
-        &:hover .button {
-            display: block;
+        img[alt="heart"] {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            align-self: start;
+            justify-self: end;
+            padding: 0.4rem;
         }
     }
 
@@ -25,12 +33,11 @@
 
     .new,
     .offer {
+        font: 16px inter-bold;
         display: inline-block;
         border-radius: 4px;
         padding: 0.2rem 1rem;
         text-transform: uppercase;
-        font-size: 16px;
-        font-family: inter-bold;
     }
 
     .new {
@@ -44,32 +51,45 @@
     }
 
     .button {
-        display: none;
-        width: 90%;
-        margin: 1rem auto;
-        padding: 0.8rem 0;
-        align-self: end;
-        justify-self: end;
+        font: 16px inter-medium;
+        position: absolute;
+        bottom: 0;
+        transform: translate(50%, 0);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+
+        /* width: 90%; */
+        /* margin: 1rem auto; */
+        /* padding: 0.8rem 0; */
+        /* align-self: end; */
+        /* justify-self: center; */
         &:hover {
             cursor: pointer;
         }
     }
+    &:hover .button {
+        bottom: 60px;
+    }
+    &:hover .button,
+    &:hover img[alt="heart"] {
+        visibility: visible;
+        opacity: 1;
+    }
 
     .title {
-        font-size: 16px;
-        font-family: inter-semibold;
+        font: 16px inter-semibold;
         color: var(--neutral-7);
+        margin-bottom: 0.5rem;
     }
 
     .price {
-        font-size: 14px;
-        font-family: inter-semibold;
+        font: 14px inter-semibold;
         color: #121212;
     }
 
     .oldPrice {
-        font-size: 14px;
-        font-family: inter;
+        font: 14px inter;
         text-decoration: line-through;
         color: var(--neutral-4);
         margin-left: 0.5rem;

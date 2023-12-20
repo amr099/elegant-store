@@ -5,14 +5,11 @@
     top: 0;
     left: 0;
     min-height: 100vh;
-    min-width: 50%;
+    width: 500px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    h6 {
-        font-size: 16px;
-    }
 
     > div {
         display: flex;
@@ -31,23 +28,23 @@
         }
     }
 
-    a {
-        font-size: 14px;
-        font-family: inter-medium;
-        border-bottom: 1px solid var(--neutral-2);
-        padding-bottom: 0.5rem;
-        &:hover {
-            text-decoration: none;
-        }
-    }
-
     span {
-        font-size: 18px;
-        font-family: inter-medium;
         color: var(--neutral-4);
     }
 
-    .flex img {
-        width: 24px;
+    .socials {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        > img:hover {
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .mobileNav {
+        width: 100%;
     }
 }

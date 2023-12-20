@@ -1,5 +1,5 @@
 .productGrid {
-    margin: 1rem 0;
+    margin: 3rem 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -29,8 +29,8 @@
     }
 
     .desc {
-        font-size: 16px;
-        font-family: inter;
+        font: 16px inter;
+        line-height: 1.6;
         color: var(--neutral-4);
     }
 
@@ -39,12 +39,10 @@
     }
 
     .oldPrice {
-        font-size: 20px;
         color: var(--neutral-4);
         text-decoration: line-through;
     }
     span {
-        font-family: inter-semibold;
         display: inline-block;
         color: var(--neutral-4);
     }

@@ -8,9 +8,12 @@
         background-position: center;
         min-height: 100vh;
     }
-    h6 {
+    .mainHead {
+        font-size: 24px;
         padding-top: 2rem;
         text-align: center;
+        margin: 0 auto;
+        display: block;
     }
     form {
         width: 80%;
@@ -19,12 +22,27 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: stretch;
         gap: 1rem;
+    }
+
+    form > div:not(:last-of-type) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    span.error {
+        color: red;
+        font-size: 12px;
+        font-family: inter-semibold;
     }
 
     p {
         color: var(--neutral-4);
         a {
+            font: 16px inter-semibold;
             color: var(--blue);
             &:hover {
                 cursor: pointer;
@@ -32,10 +50,9 @@
         }
     }
 
-    input:not([type="checkbox"]) {
-        all: unset;
-        border-bottom: 1px solid var(--neutral-4);
-        padding: 0.5rem 0;
+    p.error {
+        color: red;
+        font: 14px inter-semibold;
     }
 
     [type="checkbox"] {
@@ -44,10 +61,18 @@
     }
 
     label {
+        font: 16px inter;
+        text-transform: capitalize;
         color: var(--neutral-4);
         span {
+            font: 16px inter-semibold;
             color: var(--neutral-7);
         }
+    }
+
+    .flex,
+    .flexBetween {
+        align-items: start;
     }
 
     .flex span {

@@ -1,8 +1,8 @@
 .cart {
+    margin: 3rem 0;
     display: flex;
     flex-direction: column;
     counter-reset: step;
-    /* margin: 3rem 0; */
     h3 {
         text-align: center;
     }
@@ -33,16 +33,25 @@
         }
 
         h6 {
+            --color: var(--neutral-4);
             display: inline;
             margin-right: 20%;
-            font-size: 16px;
-            font-family: inter-semibold;
             white-space: nowrap;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color);
+            color: var(--color);
+            font-size: 20px;
+            &.completed {
+                --color: green;
+            }
+            &.selected {
+                --color: var(--neutral-7);
+            }
             &:before {
                 counter-increment: step;
                 content: counter(step);
-                padding: 12px;
-                background-color: var(--neutral-7);
+                padding: 8px 10px;
+                background-color: var(--color);
                 border-radius: 50%;
                 color: #fff;
                 margin-right: 0.5rem;
@@ -60,15 +69,6 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-    }
-
-    td {
-        font-family: inter-semibold;
-    }
-
-    .name {
-        font-size: 14px;
-        font-family: inter-semibold;
     }
 
     .color {
@@ -93,21 +93,13 @@
         border-bottom: 1px solid var(--neutral-3);
     }
 
+    .name {
+        font: 14px inter-semibold;
+    }
+
     input[type="number"] {
-        width: 80px;
+        width: 70px;
         padding: 0.5rem;
-        font-size: 12px;
-        font-family: inter-semibold;
-    }
-
-    .price {
-        font: 18px;
-        font-family: inter;
-    }
-
-    .sub {
-        font-size: 18;
-        font-family: inter-semibold;
     }
 
     img[alt="close"] {
@@ -124,24 +116,15 @@
     border-radius: 6px;
     border: 1px solid #6c7275;
 
-    h6 {
-        font-size: 20px;
-        font-family: poppins-medium;
-    }
-
-    label,
-    span {
-        font-family: inter;
-    }
-
-    .bold {
-        font-family: inter-semibold;
-    }
-
     > div:not(:nth-child(5), :nth-child(6)) {
         border: 1px solid #6c7275;
         padding: 0.5rem;
         border-radius: 6px;
+    }
+
+    label {
+        font: 16px inter;
+        color: var(--neutral-7);
     }
 }
 
@@ -154,12 +137,8 @@
         width: fit-content;
         border: 1px solid var(--neutral-7);
     }
-    h6 {
-        font-size: 20px;
-        font-family: poppins-medium;
-    }
+
     p {
-        font-family: inter;
         color: var(--neutral-4);
     }
     input,
@@ -167,13 +146,7 @@
         all: unset;
         padding: 0.7rem;
     }
-    input::placeholder {
-        font-family: inter-medium;
-    }
-    button {
-        color: var(--neutral-7);
-        font-family: inter-medium;
-    }
+
     img {
         width: 20px;
         margin-left: 0.5rem;
@@ -217,60 +190,17 @@
         }
     }
 
-    legend {
-        font-size: 20px;
-    }
-
-    label {
-        font-size: 12px;
-        font-family: inter-bold;
-        text-transform: uppercase;
-        color: var(--neutral-4);
-    }
-
-    input {
-        all: unset;
-        padding: 0.5rem;
-        border-radius: 6px;
-        border: 1px solid #cbcbcb;
-    }
-
-    input::placeholder {
-        font-family: inter;
-        text-transform: capitalize;
-        color: var(--neutral-4);
-    }
-
-    button {
-        text-align: center;
-        font-size: 16px;
-        font-family: inter-medium;
-        padding: 0.5rem 1rem;
-        margin: 0;
-    }
-
     input[name="coupon"] {
         width: 60%;
     }
 
     span,
     p {
-        font-size: 1rem;
-        font-family: inter;
         white-space: nowrap;
     }
 
     img[alt="money"] {
         width: 20px;
-    }
-
-    .discount {
-        color: var(--green);
-        font-family: inter-medium;
-    }
-
-    .bold {
-        font-family: inter-semibold;
     }
 }
 
@@ -285,18 +215,14 @@
     border-radius: 6px;
     box-shadow: 0px 32px 48px rgba(12, 12, 12, 0.1);
 
-    h6 {
+    h6,
+    div span {
         color: var(--neutral-4);
     }
     h4 {
         color: #23262f;
     }
 
-    div span {
-        font-size: 14px;
-        font-family: inter-semibold;
-        color: var(--neutral-4);
-    }
     div span:nth-of-type(2) {
         color: var(--neutral-7);
     }
@@ -354,7 +280,12 @@
     }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 769px) {
+    .cart thead tr {
+        td:not(:nth-of-type(1)) {
+            display: none;
+        }
+    }
     .complete {
         width: 90%;
         padding: 2rem 1rem;
@@ -369,13 +300,6 @@
                 border-bottom: 1px solid var(--neutral-3);
                 padding-bottom: 1rem;
             }
-        }
-        h6 {
-            font-size: 1rem;
-            font-family: inter-semibold;
-        }
-        h4 {
-            font-size: 2rem;
         }
         a {
             padding: 1rem;

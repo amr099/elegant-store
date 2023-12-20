@@ -14,10 +14,18 @@ export default function Footer() {
                         <p>Gift & Decoration Store</p>
                     </div>
                     <div>
-                        <Link to='/'>Home</Link>
-                        <Link to='/shop'>Shop</Link>
-                        <Link to='/blog'>Blog</Link>
-                        <Link to='/contact'>Contact Us</Link>
+                        <Link to='/' className='animated'>
+                            Home
+                        </Link>
+                        <Link to='/shop' className='animated'>
+                            Shop
+                        </Link>
+                        <Link to='/blog' className='animated'>
+                            Blog
+                        </Link>
+                        <Link to='/contact' className='animated'>
+                            Contact Us
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.row}>

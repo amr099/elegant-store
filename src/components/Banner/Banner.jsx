@@ -1,6 +1,6 @@
 import percent from "../../assets/icons/percent.svg";
 import arrowRightBlue from "../../assets/icons/arrow-right-blue.svg";
-import close from "../../assets/icons/close.svg";
+// import close from "../../assets/icons/close.svg";
 import styles from "./Banner.module.css";
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ export default function Banner() {
                 />
             </Link>
 
-            <img src={close} alt='close' className={styles.close} />
+            {/* <img src={close} alt='close' className={styles.close} /> */}
         </div>
     );
 }

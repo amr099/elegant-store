@@ -3,7 +3,7 @@ import rating from "../../assets/icons/rating.svg";
 import ProductsSlider from "./../../components/ProductsSlider/ProductsSlider";
 import arrowRight from "../../assets/icons/arrow-right.svg";
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
 export default function ProductDetails() {
@@ -26,7 +26,7 @@ export default function ProductDetails() {
         getProduct();
     }, [params]);
     return (
-        <>
+        <div className='container'>
             <div className={styles.productGrid}>
                 {/* <img
                     src={product?.img}
@@ -67,11 +67,11 @@ export default function ProductDetails() {
             </div>
             <div className='flexBetween'>
                 <h6>You might also like</h6>
-                <a href='#'>
+                <Link to='/shop' className='animated'>
                     more products <img src={arrowRight} alt='arrow' />
-                </a>
+                </Link>
             </div>
             <ProductsSlider />
-        </>
+        </div>
     );
 }

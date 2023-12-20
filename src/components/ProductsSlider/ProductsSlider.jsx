@@ -6,25 +6,21 @@ import { useEffect } from "react";
 export default function ProductsSlider() {
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const getProducts = async () => {
-            let products = [];
-            const response = await fetch(
-                "https://657600c70febac18d4038f91.mockapi.io/api/products"
-            );
-            const data = await response.json();
-            for (let i in data) {
-                products.push(...data[i].products);
-            }
-            setProducts(products);
-        };
-        getProducts();
-    }, []);
+    const getProducts = async () => {
+        let products = [];
+        const response = await fetch(
+            "https://657600c70febac18d4038f91.mockapi.io/api/products"
+        );
+        const data = await response.json();
+        for (let i in data) {
+            products.push(...data[i].products);
+        }
+        setProducts(products);
+    };
     const swiperRef = useRef(null);
 
     useEffect(() => {
         register();
-
         const params = {
             slidesPerView: 3,
             breakpoints: {
@@ -33,10 +29,10 @@ export default function ProductsSlider() {
                 },
             },
         };
-
         Object.assign(swiperRef.current, params);
-
         swiperRef.current.initialize();
+
+        getProducts();
     }, []);
     return (
         <swiper-container

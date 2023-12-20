@@ -1,8 +1,13 @@
 import styles from "./Profile.module.css";
-import img from "../../assets/imgs/p-color.png";
-import close from "../../assets/icons/close.svg";
+import WishlistItem from "./WishlistItem";
+import { useMediaQuery } from "react-responsive";
+import WishlistItemMobile from "./WishlistItemMobile";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 export default function Whishlist() {
+    const { user } = useContext(AuthContext);
+    const isMobile = useMediaQuery({ maxWidth: 769 });
     return (
         <table className={styles.wishlist}>
             <thead>
@@ -13,93 +18,13 @@ export default function Whishlist() {
                 </tr>
             </thead>
             <tbody>
-                {/* {orders?.map((item) => (
-                    <OrderItem item={item} key={item?.id} />
-                ))} */}
-                <tr>
-                    <td>
-                        {" "}
-                        <div className='flex'>
-                            <img src={close} alt='close' />
-                            <img
-                                src={img}
-                                alt='cartItem-img'
-                                width={"80"}
-                                height={"80"}
-                            />
-                            <div className={styles.col}>
-                                <span>Tray Table</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td>#$1234.00</td>
-                    <td>
-                        <button>Add to cart</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        {" "}
-                        <div className='flex'>
-                            <img src={close} alt='close' />
-                            <img
-                                src={img}
-                                alt='cartItem-img'
-                                width={"80"}
-                                height={"80"}
-                            />
-                            <div className={styles.col}>
-                                <span>Tray Table</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td>#$1234.00</td>
-                    <td>
-                        <button>Add to cart</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        {" "}
-                        <div className='flex'>
-                            <img src={close} alt='close' />
-                            <img
-                                src={img}
-                                alt='cartItem-img'
-                                width={"80"}
-                                height={"80"}
-                            />
-                            <div className={styles.col}>
-                                <span>Tray Table</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td>#$1234.00</td>
-                    <td>
-                        <button>Add to cart</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        {" "}
-                        <div className='flex'>
-                            <img src={close} alt='close' />
-                            <img
-                                src={img}
-                                alt='cartItem-img'
-                                width={"80"}
-                                height={"80"}
-                            />
-                            <div className={styles.col}>
-                                <span>Tray Table</span>
-                            </div>
-                        </div>
-                    </td>
-                    <td>$1234.00</td>
-                    <td>
-                        <button>Add to cart</button>
-                    </td>
-                </tr>
+                {user?.wishlist?.map((item) =>
+                    isMobile ? (
+                        <WishlistItemMobile item={item} key={item?.id} />
+                    ) : (
+                        <WishlistItem item={item} key={item?.id} />
+                    )
+                )}
             </tbody>
         </table>
     );

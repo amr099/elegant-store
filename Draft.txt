@@ -1,27 +1,34 @@
 TODO:-
+    - Nextjs.
+    - New API integration
+    - wishlist 
+    - search
+    - users
+        - update user info.
+        - encrypt password.
+        - handle remember me.
 
-- Shop (filter, sort and grid options)
-- Order {
-        userId:
-        info:{...}
-        orders:{...}
-    }
-    - handle users
-    - handle orders 
+    - orders
+        - create order and add to user.
+        - get orders of user. 
 
 
-
+    - implement see more
+     
     CSS:
-     - media for small-screen fonts
-     - insert map into contact us page
-     - fix horizontal overflow
-     - handle margin bwtween sections
-     - handle scrolltotop
-     - remove css reduntant line (input, label , fonts , table)
-     - fix tables of profile page on mobile 
-     - add slider img for mobile.
+        - form state (loading on button / red error)
+        - hover effects(anchors / icons / card)
+        - action effects(pages transitions)
+        - animations
+        - skeletons(products & product details)
 
 
+
+Nice to add:-
+    - Shop (grid options)
+    - Forget password 
+    - payment gateway
+    - dashboard
 
 
 

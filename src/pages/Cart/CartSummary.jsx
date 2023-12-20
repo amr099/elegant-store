@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { useMediaQuery } from "react-responsive";
+import FlyoutCartItem from "./../../components/FlyoutCart/FlyoutCartItem";
 
 export default function CartSummary() {
     const { cart, total } = useContext(CartContext);
+    const isMobile = useMediaQuery({ maxWidth: 769 });
     return (
         <div className={styles.cartContainer}>
             <table>
@@ -19,9 +22,13 @@ export default function CartSummary() {
                     </tr>
                 </thead>
                 <tbody>
-                    {cart?.map((item) => (
-                        <CartItem item={item} key={item?.id} />
-                    ))}
+                    {cart?.map((item) =>
+                        isMobile ? (
+                            <FlyoutCartItem item={item} key={item?.id} />
+                        ) : (
+                            <CartItem item={item} key={item?.id} />
+                        )
+                    )}
                 </tbody>
             </table>
             <div className={styles.summary}>
@@ -52,11 +59,11 @@ export default function CartSummary() {
 
                 <div className='flexBetween'>
                     <span>Subtotal</span>
-                    <span className={styles.bold}>${total}</span>
+                    <span>${total}</span>
                 </div>
                 <div className='flexBetween'>
-                    <span className={styles.bold}>Total</span>
-                    <span className={styles.bold}>${total + 36}</span>
+                    <span className='h7'>Total</span>
+                    <span className='h7'>${total + 36}</span>
                 </div>
                 <Link to='checkout' className='button'>
                     Checkout

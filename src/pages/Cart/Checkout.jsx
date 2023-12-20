@@ -3,12 +3,19 @@ import FlyoutCartItem from "./../../components/FlyoutCart/FlyoutCartItem";
 import money from "../../assets/icons/money.svg";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Checkout() {
     const { cart, total } = useContext(CartContext);
+    const navigate = useNavigate();
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        navigate("/cart/complete");
+    };
     return (
         <div className={styles.checkout}>
-            <form>
+            <form onSubmit={onSubmit}>
                 <fieldset>
                     <legend>Contact Information</legend>
                     <div>
@@ -63,7 +70,7 @@ export default function Checkout() {
                     </div>
                 </fieldset>
 
-                <button type='submit'>Place Order</button>
+                <button onClick={onSubmit}>Place Order</button>
             </form>
 
             <div className={styles.order}>
@@ -83,15 +90,15 @@ export default function Checkout() {
                 </div>
                 <div className='flexBetween'>
                     <span>Shipping</span>
-                    <span>Free</span>
+                    <span className=''>Free</span>
                 </div>
                 <div className='flexBetween'>
                     <span>Subtotal</span>
                     <span className={styles.bold}>${total}</span>
                 </div>
                 <div className='flexBetween'>
-                    <span className={styles.bold}>Total</span>
-                    <span className={styles.bold}>${total - 25}</span>
+                    <span className='h7'>Total</span>
+                    <span className='h7'>${total - 25}</span>
                 </div>
             </div>
         </div>

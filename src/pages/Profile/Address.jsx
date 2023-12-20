@@ -7,7 +7,7 @@ export default function Address() {
             <div className={styles.address}>
                 <div className={styles.card}>
                     <div className='flexBetween'>
-                        <h6>Billing Address</h6>
+                        <h6 className='h7'>Billing Address</h6>
                         <div className='flex'>
                             <img src={pencil} alt='pencil' />
                             <span>EDIT</span>
@@ -19,7 +19,7 @@ export default function Address() {
                 </div>
                 <div className={styles.card}>
                     <div className='flexBetween'>
-                        <h6>Shipping Address</h6>
+                        <h6 className='h7'>Shipping Address</h6>
                         <div className='flex'>
                             <img src={pencil} alt='pencil' />
                             <span>EDIT</span>

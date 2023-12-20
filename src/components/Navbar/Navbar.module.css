@@ -4,38 +4,36 @@
     align-items: center;
     padding: 1rem 0;
 
-    h4 {
-        font-size: 24px;
-
-        span {
-            color: var(--neutral-4);
-        }
-    }
-
-    .link {
-        all: unset;
+    h6 span {
         color: var(--neutral-4);
-        &:hover {
-            cursor: pointer;
-        }
-        &:active {
-            color: var(--neutral-7);
-        }
     }
 
     .nav {
         display: flex;
         gap: 2rem;
+        a {
+            color: var(--neutral-4);
+            &:active {
+                color: var(--neutral-7);
+            }
+        }
+    }
+
+    a.active {
+        color: var(--neutral-7);
     }
 
     .icons {
         display: flex;
-        gap: 1rem;
+        img:hover {
+            cursor: pointer;
+        }
 
         span {
             background-color: var(--neutral-7);
             color: #fff;
-            padding: 0.2rem 0.3rem;
+            width: 20px;
+            text-align: center;
             border-radius: 50%;
             margin-left: -0.8rem;
         }
@@ -59,9 +57,6 @@
         img[alt="search"],
         img[alt="user"] {
             display: none;
-        }
-        .h {
-            font-size: 0.9rem;
         }
     }
 }

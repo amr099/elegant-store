@@ -21,6 +21,7 @@ import Address from "./pages/Profile/Address.jsx";
 import OrdersHistory from "./pages/Profile/OrdersHistory.jsx";
 import Whishlist from "./pages/Profile/Whishlist.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
+import AuthContextProvider from "./context/AuthContext";
 
 const router = createBrowserRouter([
     {
@@ -70,7 +71,7 @@ const router = createBrowserRouter([
                 element: <Profile />,
                 children: [
                     {
-                        path: "details",
+                        path: "",
                         element: <Details />,
                     },
                     {
@@ -107,8 +108,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <CartContextProvider>
-            <RouterProvider router={router} />
-        </CartContextProvider>
+        <AuthContextProvider>
+            <CartContextProvider>
+                <RouterProvider router={router} />
+            </CartContextProvider>
+        </AuthContextProvider>
     </React.StrictMode>
 );

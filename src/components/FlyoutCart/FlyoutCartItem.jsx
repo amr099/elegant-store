@@ -19,7 +19,7 @@ export default function FlyoutCartItem({ item }) {
                     height={"80"}
                 />
                 <div className={styles.col}>
-                    <span className={styles.name}>{item?.name}</span>
+                    <span>{item?.name}</span>
                     {/* <span className={styles.color}>Color: Black</span> */}
                     <input
                         type='number'
@@ -33,7 +33,7 @@ export default function FlyoutCartItem({ item }) {
                 </div>
             </div>
             <div className={styles.col}>
-                <p>${Number(item?.price) * Number(item?.amount)}</p>
+                <span>${Number(item?.price) * Number(item?.amount)}</span>
                 <img
                     src={close}
                     alt='close'

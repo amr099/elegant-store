@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import styles from "./FlyoutCart.module.css";
 import FlyoutCartItem from "./FlyoutCartItem";
 import close from "../../assets/icons/close.svg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-// eslint-disable-next-line react/prop-types
+
 export default function FlyoutCart({ flycart, setFlyCart }) {
     const { cart, total } = useContext(CartContext);
 
@@ -24,14 +25,14 @@ export default function FlyoutCart({ flycart, setFlyCart }) {
                         <FlyoutCartItem key={item?.id} item={item} />
                     ))}
                 </div>
-                <div>
+                <div className={styles.col}>
                     <div className='flexBetween'>
-                        <span>Subtotal</span>
-                        <span>${total}</span>
+                        <span className='body2'>Subtotal</span>
+                        <span className='body2-semi'>${total}</span>
                     </div>
                     <div className='flexBetween'>
-                        <span>Total</span>
-                        <span>${total + 30}</span>
+                        <span className='h7'>Total</span>
+                        <span className='h7'>${total + 30}</span>
                     </div>
                     <Link to='/cart/checkout' className='button'>
                         Checkout

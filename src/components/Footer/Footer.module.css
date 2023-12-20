@@ -8,25 +8,19 @@ footer {
         padding-right: 2rem;
         border-right: 1px solid var(--neutral-5);
     }
-    a {
-        font-size: 14px;
-        font-family: poppins;
-    }
 
-    p {
-        font-size: 12px;
-        font-family: poppins;
-    }
-
-    span {
-        font-size: 12px;
-        font-family: poppins-semibold;
+    .animated {
+        border-bottom: 1px solid var(--neutral-3);
     }
 
     p,
-    span,
     a {
+        font: 14px inter;
         color: var(--neutral-3);
+    }
+
+    span {
+        font: 12px poppins-semibold;
     }
 
     .row {
@@ -48,6 +42,11 @@ footer {
 
     .socials {
         gap: 1rem;
+    }
+
+    .socials > img:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
     }
 }
 

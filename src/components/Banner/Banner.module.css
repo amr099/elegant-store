@@ -2,9 +2,10 @@
     background-color: var(--neutral-2);
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     padding: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--neutral-5);
 
     .link {
@@ -12,26 +13,12 @@
         text-transform: uppercase;
         border-bottom: 2px solid var(--blue);
     }
-
-    .arrow {
-        width: 1.1rem;
-    }
-
-    .percent,
-    .close {
-        width: 1.5rem;
-    }
 }
 
 @media (max-width: 480px) {
     .banner {
         .link {
             display: none;
-        }
-        .arrow,
-        .percent,
-        .close {
-            width: 1rem;
         }
     }
 }

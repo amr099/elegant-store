@@ -1,6 +1,13 @@
 import styles from "./Profile.module.css";
+import { useMediaQuery } from "react-responsive";
+import Order from "./Order";
+import OrderMobile from "./OrderMobile";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function OrdersHistory() {
+    const { user } = useContext(AuthContext);
+    const isMobile = useMediaQuery({ maxWidth: 769 });
     return (
         <table className={styles.orders}>
             <thead>
@@ -12,33 +19,13 @@ export default function OrdersHistory() {
                 </tr>
             </thead>
             <tbody>
-                {/* {orders?.map((item) => (
-                    <OrderItem item={item} key={item?.id} />
-                ))} */}
-                <tr>
-                    <td>#3456_768</td>
-                    <td>October 17, 2023</td>
-                    <td>#Delivered</td>
-                    <td>#$1234.00</td>
-                </tr>
-                <tr>
-                    <td>#3456_768</td>
-                    <td>October 17, 2023</td>
-                    <td>#Delivered</td>
-                    <td>#$1234.00</td>
-                </tr>
-                <tr>
-                    <td>#3456_768</td>
-                    <td>October 17, 2023</td>
-                    <td>#Delivered</td>
-                    <td>#$1234.00</td>
-                </tr>
-                <tr>
-                    <td>#3456_768</td>
-                    <td>October 17, 2023</td>
-                    <td>#Delivered</td>
-                    <td>#$1234.00</td>
-                </tr>
+                {user?.orders?.map((item) =>
+                    isMobile ? (
+                        <OrderMobile item={item} key={item?.id} />
+                    ) : (
+                        <Order item={item} key={item?.id} />
+                    )
+                )}
             </tbody>
         </table>
     );

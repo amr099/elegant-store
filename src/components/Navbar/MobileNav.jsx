@@ -21,15 +21,25 @@ export default function MobileNav({ nav, setNav }) {
             <dialog className={styles.mobileNav} open onClose={closeMobileNav}>
                 <div>
                     <div className='flexBetween'>
-                        <h6>3legant.</h6>
+                        <Link to='/' className='main-head'>
+                            3legant <span>.</span>
+                        </Link>
                         <img src={close} alt='close' onClick={closeMobileNav} />
                     </div>
                     <input type='search' placeholder='Search' />
                     {/* <nav> */}
-                    <Link to='/'>Home</Link>
-                    <Link to='/shop'>Shop</Link>
-                    <Link to='/blog'>Blog</Link>
-                    <Link to='/contact'>Contact Us</Link>
+                    <Link to='/' className='animated'>
+                        Home
+                    </Link>
+                    <Link to='/shop' className='animated'>
+                        Shop
+                    </Link>
+                    <Link to='/blog' className='animated'>
+                        Blog
+                    </Link>
+                    <Link to='/contact' className='animated'>
+                        Contact Us
+                    </Link>
                     {/* </nav> */}
                 </div>
                 <div>
@@ -37,7 +47,7 @@ export default function MobileNav({ nav, setNav }) {
                         <span>Cart</span>
                         <div className='flex'>
                             <Link to='/cart'>
-                                <img src={bag} alt='bag' />
+                                <img src={bag} alt='bag' className='icon' />
                             </Link>
                             {count != 0 && <span>{count}</span>}
                         </div>
@@ -45,13 +55,13 @@ export default function MobileNav({ nav, setNav }) {
                     <div className='flexBetween'>
                         <span>Whishlist</span>
                         <Link to='/profile/wishlist'>
-                            <img src={heart} alt='heart' />
+                            <img src={heart} alt='heart' className='icon' />
                         </Link>
                     </div>
                     <Link to='/login' className='button'>
                         Sign In
                     </Link>
-                    <div className='flex'>
+                    <div className={styles.socials}>
                         <img src={instagram} alt='instagram' />
                         <img src={facebook} alt='facebook' />
                         <img src={youtube} alt='youtube' />

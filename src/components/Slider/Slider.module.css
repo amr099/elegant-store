@@ -6,8 +6,7 @@
     align-items: center;
     margin: 2rem 0;
 
-    .h1 {
-        font-size: 4.5rem;
+    h1 {
         color: var(--neutral-7);
         width: 65%;
         margin: 0 auto;
@@ -18,21 +17,21 @@
     }
 
     .p {
-        font-size: 1rem;
+        font: 16px inter;
         color: var(--neutral-4);
         flex: 1;
     }
 
     .spanE {
+        font: 16px inter-semibold;
         color: var(--neutral-7);
     }
 }
 
 @media (max-width: 992px) {
     .homeSlider {
-        .h1 {
+        h1 {
             width: 100%;
-            font-size: 2.5rem;
             text-align: center;
         }
         .p {

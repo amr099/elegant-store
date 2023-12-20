@@ -16,10 +16,8 @@ function App() {
             <Banner />
             <FlyoutCart flycart={flycart} setFlyCart={setFlyCart} />
             <MobileNav nav={nav} setNav={setNav} />
-            <div className='container'>
-                <Navbar setNav={setNav} setFlyCart={setFlyCart} />
-                <Outlet />
-            </div>
+            <Navbar setNav={setNav} setFlyCart={setFlyCart} />
+            <Outlet />
             <Newsletter />
             <Footer />
         </>

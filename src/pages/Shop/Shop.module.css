@@ -1,4 +1,5 @@
 .shopCover {
+    margin-bottom: 3rem;
     background-image: url(../../assets/imgs/shop-cover.png);
     background-size: cover;
     height: 380px;
@@ -9,17 +10,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    p {
-        font-size: 20px;
-        font-family: inter;
-        color: #121212;
-    }
 }
 
 .shopGrid {
+    width: 100%;
+    margin: 1rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    column-gap: 1.5rem;
-    row-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     justify-items: center;
+    gap: 1.5rem;
 }
