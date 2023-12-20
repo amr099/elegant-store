@@ -16,12 +16,13 @@ TODO:-
     - implement see more
      
     CSS:
-        - form state (loading on button / red error)
-        - hover effects(anchors / icons / card)
         - action effects(pages transitions)
         - animations
-        - skeletons(products & product details)
+        - handle successfull registragtion.
+        - preload animation.
 
+    fix : 
+        - category picture
 
 
 Nice to add:-

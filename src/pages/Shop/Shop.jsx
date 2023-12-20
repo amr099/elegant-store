@@ -2,6 +2,7 @@ import styles from "./Shop.module.css";
 import ProductCard from "./../../components/ProductCard/ProductCard";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ProductCardSkeleton from "../../components/Skeletons/ProductCardSkeleton";
 
 export default function Shop() {
     const [products, setProducts] = useState([]);
@@ -84,9 +85,15 @@ export default function Shop() {
                 </div>
             </div>
             <div className={styles.shopGrid}>
-                {products?.sort(sortFun)?.map((item) => (
-                    <ProductCard item={item} key={item.id} />
-                ))}
+                {products.length != 0
+                    ? products
+                          ?.sort(sortFun)
+                          ?.map((item) => (
+                              <ProductCard item={item} key={item.id} />
+                          ))
+                    : Array.from({ length: 8 }, (_, index) => index + 1).map(
+                          (i) => <ProductCardSkeleton key={i} />
+                      )}
             </div>
         </div>
     );

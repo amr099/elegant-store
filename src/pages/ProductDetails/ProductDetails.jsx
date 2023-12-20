@@ -5,9 +5,10 @@ import arrowRight from "../../assets/icons/arrow-right.svg";
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import ProductDetailsSkeleton from "../../components/Skeletons/ProductDetailsSkeleton";
 
 export default function ProductDetails() {
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState();
     const params = useParams();
     const { AddToCart } = useContext(CartContext);
 
@@ -27,30 +28,34 @@ export default function ProductDetails() {
     }, [params]);
     return (
         <div className='container'>
-            <div className={styles.productGrid}>
-                {/* <img
+            {product ? (
+                <>
+                    <div className={styles.productGrid}>
+                        {/* <img
                     src={product?.img}
                     alt='p-img'
                     className={styles.thumbnail}
                 /> */}
-                {/* <div className={styles.gallary}> */}
-                <img src={product?.img} alt='p-img' />
-                {/* </div> */}
-                <div className={styles.details}>
-                    <img src={rating} alt='rating' />
-                    <h4>{product.name}</h4>
-                    <p className={styles.desc}>{product?.description}</p>
-                    <div className='flex'>
-                        <h6>${product?.price}</h6>{" "}
-                        {product?.oldPrice && (
-                            <span className={styles.oldPrice}>
-                                ${product?.oldPrice}
-                            </span>
-                        )}
-                    </div>
-                    <span>Measurements</span>
-                    <p>17 1/2x20 5/8 </p>
-                    {/* <span>Choose Color</span>
+                        {/* <div className={styles.gallary}> */}
+                        <img src={product?.img} alt='p-img' />
+                        {/* </div> */}
+                        <div className={styles.details}>
+                            <img src={rating} alt='rating' />
+                            <h4>{product.name}</h4>
+                            <p className={styles.desc}>
+                                {product?.description}
+                            </p>
+                            <div className='flex'>
+                                <h6>${product?.price}</h6>{" "}
+                                {product?.oldPrice && (
+                                    <span className={styles.oldPrice}>
+                                        ${product?.oldPrice}
+                                    </span>
+                                )}
+                            </div>
+                            <span>Measurements</span>
+                            <p>17 1/2x20 5/8 </p>
+                            {/* <span>Choose Color</span>
                     <p>Black</p>
                     <div className='flex'>
                         <img src={pColor} alt='p-color' />
@@ -58,19 +63,25 @@ export default function ProductDetails() {
                         <img src={pColor} alt='p-color' />
                         <img src={pColor} alt='p-color' />
                     </div> */}
-                    <button
-                        onClick={() => AddToCart({ ...product, amount: 1 })}
-                    >
-                        Add to cart
-                    </button>
-                </div>
-            </div>
-            <div className='flexBetween'>
-                <h6>You might also like</h6>
-                <Link to='/shop' className='animated'>
-                    more products <img src={arrowRight} alt='arrow' />
-                </Link>
-            </div>
+                            <button
+                                onClick={() =>
+                                    AddToCart({ ...product, amount: 1 })
+                                }
+                            >
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                    <div className='flexBetween'>
+                        <h6>You might also like</h6>
+                        <Link to='/shop' className='animated'>
+                            more products <img src={arrowRight} alt='arrow' />
+                        </Link>
+                    </div>{" "}
+                </>
+            ) : (
+                <ProductDetailsSkeleton />
+            )}
             <ProductsSlider />
         </div>
     );

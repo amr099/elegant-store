@@ -25,26 +25,34 @@ export default function Cart() {
     }, [location]);
 
     return (
-        <div className={styles.cart}>
-            <h3>Cart</h3>
-            <div className={styles.steps}>
-                <h6 className={step === 1 ? styles.selected : styles.completed}>
-                    Shopping cart
-                </h6>
-                <h6
-                    className={
-                        step === 2
-                            ? styles.selected
-                            : step > 2
-                            ? styles.completed
-                            : ""
-                    }
-                >
-                    Checkout details
-                </h6>
-                <h6 className={step > 2 && styles.completed}>Order complete</h6>
+        <div className='container'>
+            <div className={styles.cart}>
+                <h3>Cart</h3>
+                <div className={styles.steps}>
+                    <h6
+                        className={
+                            step === 1 ? styles.selected : styles.completed
+                        }
+                    >
+                        Shopping cart
+                    </h6>
+                    <h6
+                        className={
+                            step === 2
+                                ? styles.selected
+                                : step > 2
+                                ? styles.completed
+                                : ""
+                        }
+                    >
+                        Checkout details
+                    </h6>
+                    <h6 className={step > 2 && styles.completed}>
+                        Order complete
+                    </h6>
+                </div>
+                <Outlet />
             </div>
-            <Outlet />
         </div>
     );
 }

@@ -58,7 +58,7 @@ export default function SignIn() {
                 <input
                     type='username'
                     name='username'
-                    placeholder='Your username'
+                    placeholder='username'
                     {...register("username", { required: true })}
                 />
                 {errors.username && (
