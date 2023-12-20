@@ -46,6 +46,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 * {
@@ -88,6 +89,19 @@
 body {
     font-family: poppins-medium, inter, system-ui, Avenir, Helvetica, Arial,
         sans-serif;
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flexBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
@@ -199,6 +213,10 @@ button,
         color: var(--neutral-7);
         cursor: pointer;
     }
+
+    &:active {
+        background-color: var(--neutral-7);
+    }
 }
 
 select {
@@ -207,19 +225,6 @@ select {
     border-radius: 8px;
     border: 2px solid var(--neutral-4);
     font-family: inter-bold;
-}
-
-.flex {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.flexBetween {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 fieldset {
@@ -238,7 +243,7 @@ fieldset {
 }
 
 legend {
-    font-size: 20px;
+    font: 20px poppins-semibold;
 }
 
 label {

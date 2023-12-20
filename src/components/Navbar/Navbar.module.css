@@ -25,6 +25,7 @@
 
     .icons {
         display: flex;
+        gap: 0.5rem;
         img:hover {
             cursor: pointer;
         }

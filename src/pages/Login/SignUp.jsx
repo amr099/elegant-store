@@ -1,13 +1,12 @@
 import { useEffect, useReducer, useState } from "react";
 import styles from "./Login.module.css";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { formReducer, initialFormState } from "./reducer";
 import Loading from "../../components/Loading/Loading";
 export default function SignUp() {
     const [users, setUsers] = useState([]);
     const [formState, dispatch] = useReducer(formReducer, initialFormState);
-    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -61,9 +60,8 @@ export default function SignUp() {
                 });
                 console.log(response);
             } else {
-                dispatch({ type: "Account has been created successfully." });
+                dispatch({ type: "SUCCESS" });
                 reset();
-                navigate("/login");
             }
         });
     };
@@ -125,6 +123,11 @@ export default function SignUp() {
             </div>
             {formState?.error && (
                 <p className={styles.error}>{formState?.error}</p>
+            )}
+            {formState?.success && (
+                <p className={styles.success}>
+                    Your account has been registered successfully.
+                </p>
             )}
             <button>{formState?.loading ? <Loading /> : "Sign Up"}</button>
         </form>

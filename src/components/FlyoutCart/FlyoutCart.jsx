@@ -18,6 +18,7 @@ export default function FlyoutCart({ flycart, setFlyCart }) {
                         <img
                             src={close}
                             alt='close'
+                            width='50px'
                             onClick={() => setFlyCart(false)}
                         />
                     </div>

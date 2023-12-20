@@ -18,7 +18,6 @@ TODO:-
     CSS:
         - action effects(pages transitions)
         - animations
-        - handle successfull registragtion.
         - preload animation.
 
     fix : 

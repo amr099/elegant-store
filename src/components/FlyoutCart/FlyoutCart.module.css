@@ -52,7 +52,6 @@
     }
 
     img[alt="close"] {
-        width: 24px;
         align-self: flex-end;
     }
 

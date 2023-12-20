@@ -9,14 +9,14 @@ import rating from "../../assets/icons/rating.svg";
 export default function ProductCard({ item }) {
     const { AddToCart } = useContext(CartContext);
 
-    const divBg = {
+    const productImg = {
         backgroundImage: `url(${item?.img})`,
     };
 
     return (
         <div className={styles.product}>
             <Link to={`/product/${item?.id}`}>
-                <div className={styles.card} style={divBg}>
+                <div className={styles.card} style={productImg}>
                     <div className={styles.col}>
                         <div className={styles.new}>new</div>
                         <div className={styles.offer}>-50%</div>

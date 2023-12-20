@@ -50,9 +50,17 @@
         }
     }
 
+    p.error,
+    p.success {
+        font: 14px inter-semibold;
+    }
+
     p.error {
         color: red;
-        font: 14px inter-semibold;
+    }
+
+    p.success {
+        color: var(--green);
     }
 
     [type="checkbox"] {
@@ -72,7 +80,7 @@
 
     .flex,
     .flexBetween {
-        align-items: start;
+        gap: 0.2rem !important;
     }
 
     .flex span {

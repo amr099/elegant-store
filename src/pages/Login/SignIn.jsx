@@ -77,7 +77,7 @@ export default function SignIn() {
             </div>
 
             <div className='flexBetween'>
-                <div className='flex'>
+                <div>
                     <input type='checkbox' id='remember' />
                     <label htmlFor='remember'>Remember Me</label>
                 </div>

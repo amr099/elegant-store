@@ -4,27 +4,41 @@ import sale from "../../assets/imgs/sale.png";
 import arrowRight from "../../assets/icons/arrow-right.svg";
 import ProductsSlider from "./../../components/ProductsSlider/ProductsSlider";
 import { Link } from "react-router-dom";
-import CategoryThumbnail from "./../../components/CategoryThumbnail/CategoryThumbnail";
 import Article from "./../../components/Article/Article";
 import Cards from "./Cards";
+import catImg1 from "../../assets/imgs/Cat-1.png";
+import catImg2 from "../../assets/imgs/Cat-2.png";
+import catImg3 from "../../assets/imgs/Cat-3.png";
 
 export default function Home() {
     const categories = [
-        { title: "living room", css: styles.category1 },
-        { title: "kitchen", css: styles.category2 },
-        { title: "bedroom", css: styles.category3 },
+        { id: 1, title: "living room", css: styles.category1, img: catImg1 },
+        { id: 2, title: "kitchen", css: styles.category2, img: catImg2 },
+        { id: 3, title: "bedroom", css: styles.category3, img: catImg3 },
     ];
+
     return (
         <>
             <Slider />
             <div className='container'>
                 <div className={styles.categoriesGrid}>
                     {categories?.map((cat) => (
-                        <CategoryThumbnail
-                            key={cat.title}
-                            styles={cat.css}
-                            title={cat.title}
-                        />
+                        <div
+                            className={cat?.css}
+                            key={cat.id}
+                            style={{ backgroundImage: cat?.img }}
+                        >
+                            <div>
+                                <h6>{cat?.title}</h6>
+                                <Link
+                                    to={`/shop/${cat?.title}`}
+                                    className='animated'
+                                >
+                                    Shop Now{" "}
+                                    <img src={arrowRight} alt='arrow' />
+                                </Link>
+                            </div>
+                        </div>
                     ))}
                 </div>
 
