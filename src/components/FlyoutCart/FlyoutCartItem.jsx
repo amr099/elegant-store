@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import styles from "./flyoutCart.module.css";
+import styles from "./FlyoutCart.module.css";
 import close from "../../assets/icons/close.svg";
 import { useContext, useRef } from "react";
 import { CartContext } from "../../context/CartContext";
